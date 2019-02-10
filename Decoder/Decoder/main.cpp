@@ -1,12 +1,12 @@
 #include <iostream>
 
-int printandDecrementBit(int x, int pow)
+int decode(int x, int Vergleich)
 {
 
-	if (x >= pow)
+	if (x >= Vergleich)
 	{
 		std::cout << "1";
-		return x - pow;
+		return x - Vergleich;
 	}
 	else
 	{
@@ -17,21 +17,21 @@ int printandDecrementBit(int x, int pow)
 
 int main()
 {
-	std::cout << "Enter an integer between 0 and 255: ";
-	int x;
-	std::cin >> x;
+	std::cout << "Gebe eine Zahl ein zwischen 0 bis 255 ";
+	int Eingabe;
+	std::cin >> Eingabe;
 
-	x = printandDecrementBit(x, 128);
-	x = printandDecrementBit(x, 64);
-	x = printandDecrementBit(x, 32);
-	x = printandDecrementBit(x, 16);
+	Eingabe = decode(Eingabe, 128);
+	Eingabe = decode(Eingabe, 64);
+	Eingabe = decode(Eingabe, 32);
+	Eingabe = decode(Eingabe, 16);
 
 	std::cout << " ";
 
-	x = printandDecrementBit(x, 8);
-	x = printandDecrementBit(x, 4);
-	x = printandDecrementBit(x, 2);
-	x = printandDecrementBit(x, 1);
+	Eingabe = decode(Eingabe, 8);
+	Eingabe = decode(Eingabe, 4);
+	Eingabe = decode(Eingabe, 2);
+	Eingabe = decode(Eingabe, 1);
 
 	return 0;
 }
